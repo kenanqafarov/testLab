@@ -43,7 +43,20 @@ Lab1/
 - 🎨 Custom icons stored in the `images/` folder  
 - ✨ Clean, modern design using the **Poppins** font from Google Fonts  
 - ⚙️ **JavaScript functionality** added for interactive editing — you can edit CV sections dynamically without reloading the page (edit, add, and save content inline)  
-- 🔄 **Automatic data loading** — If no CV data is found in `localStorage`, it automatically fetches default data from `data.json` and stores it in `localStorage`, making it available globally
+- ✅ **Validation system** prevents saving if fields are empty — fields with missing content are highlighted  
+- ✍️ **Inline content editing** using `contentEditable` for elements like `<p>`, `<li>`, `<strong>`, `<h1>`, and `<h3>`  
+- ➕ **“+ Add” button** allows users to insert new entries for sections such as:
+  - Education  
+  - Work Experience  
+  - Certifications  
+  - Skills  
+  - Projects  
+  - Languages  
+- 💾 **Auto-saving to localStorage** — your edits persist even after refreshing the page  
+- 🚦 **Visual feedback**:
+  - Red underline for empty fields  
+  - Blue highlight when pressing Enter moves to the next editable section  
+- 📂 **Dynamic rendering** of all CV content from structured JavaScript object (`userData`)
 
 
 ## 📸 Images
