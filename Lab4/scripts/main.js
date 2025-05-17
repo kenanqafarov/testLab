@@ -1,4 +1,3 @@
-// --- LOAD OR INIT DATA ---
 const defaultUserData = {
     name: "MURAD <span class='cvHighlight'>MUSTAFAZADƏ</span>",
     title: "STUDENT",
@@ -54,7 +53,6 @@ const defaultUserData = {
 
 let userData = JSON.parse(localStorage.getItem('cvUserData')) || defaultUserData;
 
-// --- RENDER FUNCTIONS ---
 function createAccordionSection(container, title, items, renderItem) {
     const itemDiv = document.createElement('div');
     itemDiv.className = 'cvAccordionItem';
@@ -198,7 +196,6 @@ function saveCVToLocalStorage() {
         return result;
     };
 
-    // Left Accordion
     userData.contact = getIconTextItems('.cvLeftAccordion .cvAccordionItem:nth-child(1) .cvAccordionPanel p');
     userData.socialMedia = getIconTextItems('.cvLeftAccordion .cvAccordionItem:nth-child(2) .cvAccordionPanel p');
     userData.education = getItemsFromPanel('.cvLeftAccordion .cvAccordionItem:nth-child(3) .cvAccordionPanel p', el => {
@@ -209,19 +206,16 @@ function saveCVToLocalStorage() {
     userData.skills = getListItems('.cvLeftAccordion .cvAccordionItem:nth-child(4) .cvAccordionPanel');
     userData.languages = getListItems('.cvLeftAccordion .cvAccordionItem:nth-child(5) .cvAccordionPanel');
 
-    // Right Accordion
     userData.profile = getParagraphItems('.cvRightAccordion .cvAccordionItem:nth-child(1) .cvAccordionPanel p')[0] || '';
     userData.workExperience = getStrongAndListItems('.cvRightAccordion .cvAccordionItem:nth-child(2) .cvAccordionPanel');
     userData.reference = getParagraphItems('.cvRightAccordion .cvAccordionItem:nth-child(3) .cvAccordionPanel p')[0] || '';
     userData.certifications = getDoubleParagraphItems('.cvRightAccordion .cvAccordionItem:nth-child(4) .cvAccordionPanel');
     userData.projects = getDoubleParagraphItems('.cvRightAccordion .cvAccordionItem:nth-child(5) .cvAccordionPanel');
 
-    // Save to localStorage
     localStorage.setItem('cvUserData', JSON.stringify(userData));
 }
 
 
-// --- MAIN SCRIPT ---
 document.addEventListener('DOMContentLoaded', function () {
     renderCV();
 

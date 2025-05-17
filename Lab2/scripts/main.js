@@ -116,7 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
   panels.forEach(panel => {
     const sectionTitle = (panel.parentElement.querySelector('.cvAccordionButton')?.textContent || "").toLowerCase();
 
-    // Burada "social media" və "contact" üçün istisna tətbiq edirik
     if (sectionTitle.includes("social media") || sectionTitle.includes("contact")) {
       return;
     }
